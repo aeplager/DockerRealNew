@@ -1,0 +1,15 @@
+version: "3.4"
+services:
+  amagcons: #docker run -it -v ${PWD}:/work -w /work -p 5003:5000 aimvector/python:1.0.0 /bin/sh
+    container_name: python
+    image: amagcons:latest
+    build:
+      context: ./amagcons
+      #target: prod
+    #working_dir: /work      #comment out for build.target:prod
+    #entrypoint: /bin/sh     #comment out for build.target:prod
+    #stdin_open: true        #comment out for build.target:prod
+    #tty: true               #comment out for build.target:prod
+    volumes:
+    - ./amagcons/src/:/work 
+   
